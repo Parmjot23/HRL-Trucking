@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Truck, MapPin, Calendar, User, FileText, CheckCircle } from 'lucide-react';
+import { Calculator, MapPin, Calendar, User, FileText, CheckCircle } from 'lucide-react';
 
-const QuotePage: React.FC = () => {
+interface QuoteFormData {
+  projectType: string;
+  material: string;
+  quantity: string;
+  truckSize: string;
+  pickupLocation: string;
+  deliveryLocation: string;
+  distance: string;
+  accessRequirements: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  timeFlexible: boolean;
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  additionalServices: string[];
+  specialRequirements: string;
+  budget: string;
+}
+
+const QuotePage: FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<QuoteFormData>({
     // Project Details
     projectType: '',
     material: '',
