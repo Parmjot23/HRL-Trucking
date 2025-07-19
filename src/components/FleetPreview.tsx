@@ -67,8 +67,8 @@ const FleetPreview: React.FC = () => {
           {/* Content */}
           <div className="relative z-10 text-center py-16 px-6 sm:py-20 sm:px-8 md:py-24 md:px-12">
             <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 mx-auto max-w-5xl">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 text-shadow-strong">
-                Our <span className="text-gradient bg-gradient-to-r from-primary-200 to-primary-50 bg-clip-text text-transparent" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9), 0px 0px 8px rgba(0, 0, 0, 0.5)' }}>Premium Fleet</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary-50 mb-6 text-shadow-strong">
+                Our <span className="bg-gradient-to-r from-primary-100 to-white bg-clip-text text-transparent" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9), 0px 0px 8px rgba(0, 0, 0, 0.5)' }}>Premium Fleet</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed text-shadow-medium">
                 State-of-the-art dump trucks equipped with the latest technology, 
