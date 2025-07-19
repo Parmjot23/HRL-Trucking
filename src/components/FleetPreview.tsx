@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Truck, Gauge, Weight, Shield, ArrowRight } from 'lucide-react';
 
+// Import fleet image
+import fleetImage from '../assets/images/Our Premium Fleet.png';
+
 const FleetPreview: React.FC = () => {
   const trucks = [
     {
@@ -41,21 +44,38 @@ const FleetPreview: React.FC = () => {
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom">
-        {/* Header */}
+        {/* Header with Fleet Background */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="relative overflow-hidden rounded-3xl mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
-            Our <span className="text-gradient">Premium Fleet</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            State-of-the-art dump trucks equipped with the latest technology, 
-            maintained to the highest standards for maximum reliability and safety.
-          </p>
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-responsive bg-mobile img-optimize"
+            style={{ backgroundImage: `url(${fleetImage})` }}
+          />
+          
+          {/* Enhanced Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/85" />
+          
+          {/* Additional center overlay for text area */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent" />
+          
+          {/* Content */}
+          <div className="relative z-10 text-center py-16 px-6 sm:py-20 sm:px-8 md:py-24 md:px-12">
+            <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 mx-auto max-w-5xl">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 text-shadow-strong">
+                Our <span className="text-gradient bg-gradient-to-r from-primary-300 to-primary-200 bg-clip-text text-transparent" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9), 0px 0px 8px rgba(0, 0, 0, 0.5)' }}>Premium Fleet</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed text-shadow-medium">
+                State-of-the-art dump trucks equipped with the latest technology, 
+                maintained to the highest standards for maximum reliability and safety.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Fleet Stats */}
@@ -68,7 +88,7 @@ const FleetPreview: React.FC = () => {
         >
           {specs.map((spec, index) => (
             <div key={index} className="text-center">
-              <div className="bg-white p-6 rounded-2xl shadow-lg mb-4">
+              <div className="bg-white p-6 rounded-2xl shadow-lg mb-4 hover:shadow-xl transition-shadow duration-300">
                 <spec.icon className="h-12 w-12 text-primary-600 mx-auto mb-4" />
                 <div className="text-3xl font-black text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-gray-600 font-medium">{spec.label}</div>
