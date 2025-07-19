@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -60,17 +60,17 @@ const Testimonials: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
               viewport={{ once: true }}
               className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 card-hover relative"
             >
               {/* Quote Icon */}
-              <Quote className="h-12 w-12 text-primary-200 absolute top-6 right-6" />
+              <Quote className="h-12 w-12 text-primary-200 absolute top-6 right-6 transition-all duration-300" />
               
               {/* Rating */}
               <div className="flex items-center mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current transition-all duration-300" />
                 ))}
               </div>
 
@@ -88,7 +88,7 @@ const Testimonials: React.FC = () => {
               {/* Author Info */}
               <div className="flex items-center space-x-4">
                 <div className="bg-primary-600 p-3 rounded-full">
-                  <testimonial.icon className="h-6 w-6 text-white" />
+                <testimonial.icon className="h-6 w-6 text-white transition-all duration-300" />
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
@@ -104,7 +104,7 @@ const Testimonials: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 md:p-12 text-white text-center"
         >
@@ -138,7 +138,7 @@ const Testimonials: React.FC = () => {
             </p>
             <div className="flex items-center justify-center space-x-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 text-yellow-300 fill-current" />
+                <Star key={i} className="h-6 w-6 text-yellow-300 fill-current transition-all duration-300" />
               ))}
               <span className="ml-4 text-primary-100 font-medium">
                 - Industry Consensus

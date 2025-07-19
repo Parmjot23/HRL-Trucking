@@ -52,7 +52,7 @@ const ServicesOverview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -72,7 +72,7 @@ const ServicesOverview: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-2xl shadow-lg card-hover h-96 sm:h-80 md:h-96 lg:h-80 xl:h-96"
             >
@@ -92,7 +92,7 @@ const ServicesOverview: React.FC = () => {
               <div className="relative z-10 p-6 sm:p-8 h-full flex flex-col justify-end">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="bg-primary-600/95 backdrop-blur-sm p-3 rounded-xl group-hover:bg-primary-700/95 transition-colors shadow-lg">
-                    <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white drop-shadow-sm" />
+                    <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white drop-shadow-sm transition-all duration-300" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white text-shadow-strong">{service.title}</h3>
                 </div>
@@ -115,7 +115,7 @@ const ServicesOverview: React.FC = () => {
                     className="flex items-center space-x-2 bg-primary-600/95 hover:bg-primary-700/95 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base shadow-lg hover:shadow-xl text-shadow-soft border border-primary-400/30"
                   >
                     <span>Get Quote</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 transition-all duration-300" />
                   </Link>
                 </div>
               </div>
@@ -127,11 +127,11 @@ const ServicesOverview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="text-center bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white"
         >
-          <Truck className="h-16 w-16 mx-auto mb-6 opacity-80" />
+          <Truck className="h-16 w-16 mx-auto mb-6 opacity-80 transition-all duration-300" />
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Need a Custom Solution?
           </h3>
