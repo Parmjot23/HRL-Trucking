@@ -26,20 +26,20 @@ const ContactPage: FC = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '(555) 123-4567',
+      details: '+1 (819) 588-5472',
       subtitle: 'Available 24/7 for emergencies'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@hrltrucking.com',
+      details: 'hrltrucking5@gmail.com',
       subtitle: 'We respond within 2 hours'
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: '123 Industrial Blvd',
-      subtitle: 'Your City, State 12345'
+      details: '167 Fairweather St',
+      subtitle: 'Ottawa, ON K1T0L3'
     },
     {
       icon: Clock,
@@ -127,7 +127,7 @@ const ContactPage: FC = () => {
                   <Phone className="h-6 w-6 mr-2" />
                   Emergency Hotline
                 </h3>
-                <p className="text-red-700 text-lg font-semibold mb-2">(555) 911-HAUL</p>
+                <p className="text-red-700 text-lg font-semibold mb-2">+1 (819) 588-5472</p>
                 <p className="text-red-600">
                   For urgent transport needs outside business hours
                 </p>
@@ -187,7 +187,7 @@ const ContactPage: FC = () => {
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
-                      placeholder="(555) 123-4567"
+                      placeholder="+1 (819) 588-5472"
                     />
                   </div>
                   <div>
@@ -256,7 +256,7 @@ const ContactPage: FC = () => {
           <div className="text-center">
             <MapPin className="h-16 w-16 text-gray-500 mx-auto mb-4" />
             <p className="text-gray-600 text-lg">Interactive Map Coming Soon</p>
-            <p className="text-gray-500">123 Industrial Blvd, Your City, State 12345</p>
+            <p className="text-gray-500">167 Fairweather St, Ottawa, ON K1T0L3</p>
           </div>
         </div>
       </section>
