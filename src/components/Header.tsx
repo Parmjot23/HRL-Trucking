@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Truck } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/images/IMG_1362.webp';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,19 +41,13 @@ const Header: React.FC = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <motion.div
+          <Link to="/" className="flex items-center group">
+            <motion.img
               whileHover={{ scale: 1.05 }}
-              className="bg-primary-600 p-2 rounded-lg shadow-lg group-hover:bg-primary-700 transition-colors"
-            >
-              <Truck className="h-8 w-8 text-white transition-all duration-300" />
-            </motion.div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                HRL
-              </span>
-              <span className="text-sm text-gray-600 -mt-1">TRUCKING</span>
-            </div>
+              src={logo}
+              alt="HRL Trucking Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
