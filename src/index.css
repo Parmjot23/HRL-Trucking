@@ -77,12 +77,10 @@
   }
   
   /* Image optimization for better performance */
-  .img-optimize {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-  }
+.img-optimize {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
   
   /* Enhanced text shadows for better readability on images */
   .text-shadow-strong {
