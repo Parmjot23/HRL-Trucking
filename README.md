@@ -185,9 +185,10 @@ HRL-Trucking/
 ## 📞 **Contact & Support**
 
 For questions about this website or HRL Trucking services:
-- **Phone**: (555) 123-4567
-- **Email**: info@hrltrucking.com
-- **Emergency**: (555) 911-HAUL
+- **Phone**: +1 (819) 588-5472
+- **Email**: hrltrucking5@gmail.com
+- **Address**: 167 Fairweather St, Ottawa, ON K1T0L3
+- **Emergency**: +1 (819) 588-5472
 
 ---
 

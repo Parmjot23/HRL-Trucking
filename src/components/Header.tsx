@@ -82,7 +82,7 @@ const Header: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-gray-700">
               <Phone className="h-4 w-4" />
-              <span className="font-medium">(555) 123-4567</span>
+              <span className="font-medium">+1 (819) 588-5472</span>
             </div>
             <Link
               to="/quote"
@@ -131,7 +131,7 @@ const Header: React.FC = () => {
                 <div className="pt-4 border-t border-gray-200">
                   <div className="flex items-center space-x-2 text-gray-700 mb-4 pl-4">
                     <Phone className="h-4 w-4" />
-                    <span className="font-medium">(555) 123-4567</span>
+                    <span className="font-medium">+1 (819) 588-5472</span>
                   </div>
                   <Link
                     to="/quote"
