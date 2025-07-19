@@ -51,7 +51,7 @@ const WhyChooseUs: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -71,12 +71,12 @@ const WhyChooseUs: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
               viewport={{ once: true }}
               className="text-center group"
             >
               <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-2xl mb-6 group-hover:from-primary-100 group-hover:to-primary-200 transition-all duration-300">
-                <reason.icon className="h-12 w-12 text-primary-600 mx-auto mb-4" />
+                <reason.icon className="h-12 w-12 text-primary-600 mx-auto mb-4 transition-all duration-300" />
                 <div className="text-2xl font-black text-primary-600 mb-2">{reason.stats}</div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
@@ -89,7 +89,7 @@ const WhyChooseUs: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white mb-16"
         >
@@ -108,7 +108,7 @@ const WhyChooseUs: React.FC = () => {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
                 viewport={{ once: true }}
                 className="text-center"
               >
@@ -127,7 +127,7 @@ const WhyChooseUs: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
@@ -141,11 +141,11 @@ const WhyChooseUs: React.FC = () => {
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
                   viewport={{ once: true }}
                   className="flex items-start space-x-3"
                 >
-                  <CheckCircle className="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5 transition-all duration-300" />
                   <p className="text-gray-700 text-lg">{quote}</p>
                 </motion.div>
               ))}
@@ -155,7 +155,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl">
             <div className="flex items-center mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
+                <Star key={i} className="h-6 w-6 text-yellow-400 fill-current transition-all duration-300" />
               ))}
               <span className="ml-2 text-gray-600 font-medium">4.9/5 Rating</span>
             </div>
@@ -165,7 +165,7 @@ const WhyChooseUs: React.FC = () => {
             </blockquote>
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                <Users className="h-6 w-6 text-gray-600" />
+                <Users className="h-6 w-6 text-gray-600 transition-all duration-300" />
               </div>
               <div>
                 <div className="font-semibold text-gray-900">Construction Partners Inc.</div>

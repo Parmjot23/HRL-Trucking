@@ -24,19 +24,19 @@ const Footer: React.FC = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary-400" />
+                <Phone className="h-5 w-5 text-primary-400 transition-all duration-300" />
                 <span>+1 (819) 588-5472</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary-400" />
+                <Mail className="h-5 w-5 text-primary-400 transition-all duration-300" />
                 <span>hrltrucking5@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary-400" />
+                <MapPin className="h-5 w-5 text-primary-400 transition-all duration-300" />
                 <span>167 Fairweather St, Ottawa, ON K1T0L3</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock className="h-5 w-5 text-primary-400" />
+                <Clock className="h-5 w-5 text-primary-400 transition-all duration-300" />
                 <span>24/7 Emergency Service Available</span>
               </div>
             </div>

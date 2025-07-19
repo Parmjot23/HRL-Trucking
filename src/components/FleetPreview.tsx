@@ -48,7 +48,7 @@ const FleetPreview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="relative overflow-hidden rounded-3xl mb-16"
         >
@@ -82,14 +82,14 @@ const FleetPreview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {specs.map((spec, index) => (
             <div key={index} className="text-center">
               <div className="bg-white p-6 rounded-2xl shadow-lg mb-4 hover:shadow-xl transition-shadow duration-300">
-                <spec.icon className="h-12 w-12 text-primary-600 mx-auto mb-4" />
+                <spec.icon className="h-12 w-12 text-primary-600 mx-auto mb-4 transition-all duration-300" />
                 <div className="text-3xl font-black text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-gray-600 font-medium">{spec.label}</div>
               </div>
@@ -104,13 +104,13 @@ const FleetPreview: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
             >
               {/* Truck Image Placeholder */}
               <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                <Truck className="h-20 w-20 text-gray-400" />
+                <Truck className="h-20 w-20 text-gray-400 transition-all duration-300" />
                 {!truck.available && (
                   <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                     In Use
@@ -161,7 +161,7 @@ const FleetPreview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
           className="text-center"
         >

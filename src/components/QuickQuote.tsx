@@ -62,11 +62,11 @@ const QuickQuote: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Calculator className="h-8 w-8 text-primary-600" />
+              <Calculator className="h-8 w-8 text-primary-600 transition-all duration-300" />
               <span className="text-primary-600 font-semibold text-lg">Instant Estimate</span>
             </div>
             
@@ -82,7 +82,7 @@ const QuickQuote: React.FC = () => {
             <div className="space-y-6 mb-8">
               <div className="flex items-center space-x-4">
                 <div className="bg-primary-100 p-3 rounded-lg">
-                  <Truck className="h-6 w-6 text-primary-600" />
+                  <Truck className="h-6 w-6 text-primary-600 transition-all duration-300" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Fleet Variety</h4>
@@ -92,7 +92,7 @@ const QuickQuote: React.FC = () => {
               
               <div className="flex items-center space-x-4">
                 <div className="bg-primary-100 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-primary-600" />
+                  <MapPin className="h-6 w-6 text-primary-600 transition-all duration-300" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Distance-Based Pricing</h4>
@@ -102,7 +102,7 @@ const QuickQuote: React.FC = () => {
               
               <div className="flex items-center space-x-4">
                 <div className="bg-primary-100 p-3 rounded-lg">
-                  <Calendar className="h-6 w-6 text-primary-600" />
+                  <Calendar className="h-6 w-6 text-primary-600 transition-all duration-300" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Flexible Scheduling</h4>
@@ -115,6 +115,7 @@ const QuickQuote: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="bg-primary-600 text-white p-6 rounded-2xl mb-8"
               >
                 <h3 className="text-2xl font-bold mb-2">Estimated Cost</h3>
@@ -128,7 +129,7 @@ const QuickQuote: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
             className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100"
           >
@@ -218,7 +219,7 @@ const QuickQuote: React.FC = () => {
                   className="flex items-center justify-center space-x-2 w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
                   <span>Get Detailed Quote</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-all duration-300" />
                 </Link>
               </div>
             </div>
