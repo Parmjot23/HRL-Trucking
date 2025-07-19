@@ -2,6 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HardHat, Mountain, Wrench, Clock, CheckCircle, Truck } from 'lucide-react';
 
+import constructionHaulingImg from '../assets/images/Construction Hauling.png';
+import miningImg from '../assets/images/Mining.png';
+import industrialServicesImg from '../assets/images/Industrial Services.png';
+import emergencyServicesImg from '../assets/images/emergency services.png';
+
 const ServicesPage: React.FC = () => {
   const services = [
     {
@@ -17,7 +22,7 @@ const ServicesPage: React.FC = () => {
         'Waste material disposal'
       ],
       pricing: 'Starting at $150/hour',
-      image: '/construction-service.jpg'
+      image: constructionHaulingImg
     },
     {
       icon: Mountain,
@@ -32,7 +37,7 @@ const ServicesPage: React.FC = () => {
         'Environmental cleanup'
       ],
       pricing: 'Starting at $200/hour',
-      image: '/mining-service.jpg'
+      image: miningImg
     },
     {
       icon: Wrench,
@@ -47,7 +52,7 @@ const ServicesPage: React.FC = () => {
         'Facility cleanup projects'
       ],
       pricing: 'Starting at $175/hour',
-      image: '/industrial-service.jpg'
+      image: industrialServicesImg
     },
     {
       icon: Clock,
@@ -62,7 +67,7 @@ const ServicesPage: React.FC = () => {
         'Storm damage cleanup'
       ],
       pricing: 'Premium emergency rates',
-      image: '/emergency-service.jpg'
+      image: emergencyServicesImg
     }
   ];
 
@@ -102,12 +107,16 @@ const ServicesPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl overflow-hidden card-hover"
+              className="group bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl overflow-hidden card-hover"
               >
                 {/* Service Image */}
-                <div className="relative h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <service.icon className="h-24 w-24 text-gray-400" />
-                  <div className="absolute inset-0 bg-black/20"></div>
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
                 </div>
 
                 <div className="p-8">
