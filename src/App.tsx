@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -10,6 +11,7 @@ import QuotePage from './pages/QuotePage';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App min-h-screen flex flex-col bg-gray-50">
         <Header />
         <main className="flex-1">

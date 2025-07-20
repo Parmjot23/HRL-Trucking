@@ -74,6 +74,12 @@
       background-size: cover;
       background-position: center top;
     }
+
+    /* Disable heavy backdrop blur on small screens */
+    .glass-effect {
+      backdrop-filter: none;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
   }
   
   /* Image optimization for better performance */
