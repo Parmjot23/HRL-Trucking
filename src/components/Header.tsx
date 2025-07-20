@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               src={logo}
               alt="HRL Trucking Logo"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 

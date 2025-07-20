@@ -71,11 +71,21 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © 2024 HRL Trucking. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <p className="text-gray-400 text-sm">
+              <a
+                href="https://www.madebyparm.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-400"
+              >
+                MadeByParm
+              </a>
+            </p>
+            <div className="flex space-x-6 md:mt-0">
               <Link to="#" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
                 Privacy Policy
               </Link>
