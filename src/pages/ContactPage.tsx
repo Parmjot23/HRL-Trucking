@@ -250,15 +250,15 @@ const ContactPage: FC = () => {
         </div>
       </section>
 
-      {/* Map Section Placeholder */}
+      {/* Map Section */}
       <section className="h-96 bg-gray-200 relative">
-        <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-            <p className="text-gray-600 text-lg">Interactive Map Coming Soon</p>
-            <p className="text-gray-500">167 Fairweather St, Ottawa, ON K1T0L3</p>
-          </div>
-        </div>
+        <iframe
+          title="HRL Trucking location map"
+          className="absolute inset-0 h-full w-full"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=167%20Fairweather%20St%2C%20Ottawa%20ON%20K1T0L3&output=embed"
+        />
       </section>
     </div>
   );

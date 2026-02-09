@@ -1,8 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Star, Quote, Building, Wrench, HardHat } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
   const testimonials = [
     {
       name: 'Marcus Johnson',
@@ -33,6 +34,13 @@ const Testimonials: React.FC = () => {
     }
   ];
 
+  const headerTransition = { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" };
+  const cardTransition = (index: number) => ({
+    duration: prefersReducedMotion ? 0 : 0.6,
+    delay: prefersReducedMotion ? 0 : index * 0.1,
+    ease: "easeInOut"
+  });
+
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
@@ -40,7 +48,7 @@ const Testimonials: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={headerTransition}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -60,7 +68,7 @@ const Testimonials: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
+              transition={cardTransition(index)}
               viewport={{ once: true }}
               className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8 card-hover relative"
             >
@@ -104,7 +112,7 @@ const Testimonials: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={headerTransition}
           viewport={{ once: true }}
           className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 md:p-12 text-white text-center"
         >
