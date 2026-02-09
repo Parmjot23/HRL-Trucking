@@ -94,6 +94,9 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
             className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-100 hover:bg-white/10'}`}
           >
             {isMenuOpen ? (
@@ -114,6 +117,7 @@ const Header: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+            id="mobile-menu"
           >
             <div className="container-custom py-4">
               <nav className="flex flex-col space-y-4">

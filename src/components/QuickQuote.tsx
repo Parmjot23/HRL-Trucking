@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Calculator, Truck, MapPin, Calendar, ArrowRight } from 'lucide-react';
 
 const QuickQuote: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     projectType: '',
     truckSize: '',
@@ -54,6 +55,8 @@ const QuickQuote: React.FC = () => {
     setEstimatedCost(null);
   };
 
+  const sectionTransition = { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" };
+
   return (
     <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
       <div className="container-custom">
@@ -62,7 +65,7 @@ const QuickQuote: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={sectionTransition}
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-3 mb-6">
@@ -115,7 +118,7 @@ const QuickQuote: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: "easeInOut" }}
                 className="bg-primary-600 text-white p-6 rounded-2xl mb-8"
               >
                 <h3 className="text-2xl font-bold mb-2">Estimated Cost</h3>
@@ -129,7 +132,7 @@ const QuickQuote: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={sectionTransition}
             viewport={{ once: true }}
             className="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100"
           >

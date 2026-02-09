@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Truck, HardHat, Mountain, Wrench, Clock, ArrowRight } from 'lucide-react';
 
 // Import service images
@@ -10,6 +10,7 @@ import industrialServicesImg from '../assets/images/Industrial Services.png';
 import emergencyServicesImg from '../assets/images/emergency services.png';
 
 const ServicesOverview: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
   const services = [
     {
       icon: HardHat,
@@ -45,6 +46,13 @@ const ServicesOverview: React.FC = () => {
     }
   ];
 
+  const headerTransition = { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" };
+  const cardTransition = (index: number) => ({
+    duration: prefersReducedMotion ? 0 : 0.6,
+    delay: prefersReducedMotion ? 0 : index * 0.1,
+    ease: "easeInOut"
+  });
+
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
@@ -52,7 +60,7 @@ const ServicesOverview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={headerTransition}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -72,7 +80,7 @@ const ServicesOverview: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
+              transition={cardTransition(index)}
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-2xl shadow-lg card-hover h-96 sm:h-80 md:h-96 lg:h-80 xl:h-96"
             >
@@ -80,6 +88,8 @@ const ServicesOverview: React.FC = () => {
               <div 
                 className="absolute inset-0 bg-responsive img-optimize transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url(${service.image})` }}
+                role="img"
+                aria-label={`${service.title} service`}
               />
               
               {/* Enhanced Gradient Overlay for better text readability */}
@@ -127,7 +137,7 @@ const ServicesOverview: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={headerTransition}
           viewport={{ once: true }}
           className="text-center bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white"
         >

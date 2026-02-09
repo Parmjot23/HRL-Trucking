@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Truck, Clock, Shield } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
   const stats = [
     { icon: Truck, value: '150+', label: 'Trucks in Fleet' },
     { icon: Clock, value: '24/7', label: 'Available Service' },
@@ -16,6 +17,14 @@ const HeroSection: React.FC = () => {
     'Competitive Pricing',
     'Licensed & Insured'
   ];
+
+  const baseTransition = { duration: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" };
+  const titleTransition = { duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 0.2, ease: "easeInOut" };
+  const paragraphTransition = { duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 0.4, ease: "easeInOut" };
+  const featuresTransition = { duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 0.6, ease: "easeInOut" };
+  const ctaTransition = { duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 0.8, ease: "easeInOut" };
+  const statsTransition = { duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 1, ease: "easeInOut" };
+  const scrollTransition = { duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 1.5, ease: "easeInOut" };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -35,14 +44,14 @@ const HeroSection: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={baseTransition}
             className="mb-12"
           >
             <motion.h1 
               className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
+            transition={titleTransition}
             >
               <span className="block">POWERFUL</span>
               <span className="block text-gradient bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
@@ -55,7 +64,7 @@ const HeroSection: React.FC = () => {
               className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeInOut" }}
+              transition={paragraphTransition}
             >
               Professional dump truck transport services for construction, mining, and industrial projects. 
               <span className="text-primary-400 font-semibold"> Reliable. Efficient. Safe.</span>
@@ -66,7 +75,7 @@ const HeroSection: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeInOut" }}
+              transition={featuresTransition}
             >
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-2 text-sm md:text-base">
@@ -81,7 +90,7 @@ const HeroSection: React.FC = () => {
               className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
+              transition={ctaTransition}
             >
               <Link
                 to="/quote"
@@ -104,12 +113,12 @@ const HeroSection: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1, ease: "easeInOut" }}
+            transition={statsTransition}
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05 }}
+                whileHover={prefersReducedMotion ? undefined : { scale: 1.05 }}
                 className="glass-effect rounded-2xl p-6 text-center group"
               >
                 <stat.icon className="h-12 w-12 text-primary-400 mx-auto mb-4 group-hover:text-primary-300 transition-colors" />
@@ -129,17 +138,17 @@ const HeroSection: React.FC = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
+        transition={scrollTransition}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          animate={prefersReducedMotion ? undefined : { y: [0, 10, 0] }}
+          transition={prefersReducedMotion ? { duration: 0 } : { duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
         >
           <motion.div
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            animate={prefersReducedMotion ? undefined : { y: [0, 16, 0] }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="w-1 h-3 bg-white/50 rounded-full mt-2"
           />
         </motion.div>
